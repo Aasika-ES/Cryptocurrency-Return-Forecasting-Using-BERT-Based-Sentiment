@@ -1,23 +1,43 @@
-# MSc-Thesis-Cryptocurrency-Price-Forecasting-Using-BERT-Based-Sentiment
+# Cryptocurrency Return Prediction Using BERT-Based Sentiment Analysis
 
-Cryptocurrency Return Prediction Using Investor Sentiment Extracted by BERT-Based Classifiers From News Articles, Reddit Posts and Tweets
+**Master’s Thesis Project – M.Sc. Data Science / Finance Applications**
 
-Master's thesis project for the program of M.Sc. Economics and Management Science at Humboldt University of Berlin
+This project presents an **end-to-end framework for predicting cryptocurrency returns** by leveraging **investor sentiment extracted from financial news, Reddit posts, and Tweets** using **BERT-based NLP models**. The pipeline combines **natural language processing, machine learning, and quantitative financial modeling**, and includes trading simulations to evaluate predictive performance.
 
---by Duygu Ider   https://www.linkedin.com/in/duyguider/
+---
 
-Please find the paper here: https://arxiv.org/abs/2204.05781
+## Project Overview
 
-Outline of the project and what each script/notebook does:
+The project is divided into two main parts:
 
-PART 1: BERT-Based Sentiment Classification
-1. _price_data_scrape.ipynb_ - Scrape price data for Bitcoin and Ethereum
-2. _news_scraper_final.ipynb_, _reddit_scraper_final.ipynb_, _twitter_scraper_final.py_ - Scrape news, Reddit and Tweets data
-3. _weak_labels_approach.py_ - Use Financhial Phrasebank data (Malo et. al, 2014) to label it with pseudo-labels predicted by BART zero-shot classifier, fit a BERT-based classifier, evaluate model performance in the case of weak labels
-4. _combine_text_data_zsc_finbert.py_ - Combine the price and text data to a single dataset, predict sentiment using zero-shot classifier (BART) and FinBERT to assign weak labels
-5. _bert_crypto_hyperparam_optimal_and_zsc.ipynb_ - Perform grid search hyperparameter optimization to the process of fine-tuning BERT-based classifiers. The implemented models are BERT-Unfrozen, BERT-Frozen and BERT-Context
+### **Part 1: BERT-Based Sentiment Classification**
+- **Data Collection:** Scraped historical price data for Bitcoin and Ethereum, as well as financial news, Reddit posts, and Tweets.  
+- **Sentiment Labeling:** Used a weak-label approach with the Financial Phrasebank dataset and a zero-shot BART classifier to generate pseudo-labels.  
+- **BERT Model Training:** Fine-tuned BERT-based classifiers (BERT-Frozen, BERT-Unfrozen, BERT-Context) with hyperparameter optimization for sentiment prediction.  
+- **Data Integration:** Combined price and sentiment data into a single dataset, assigning predicted sentiment labels for further analysis.
 
-PART 2: Return Prediction and Trading Simulation
-1. _data_prep_for_financial_models.py_ - Prepare the combined dataset as an input for the financial models. Add price, macroeconomic, blockchain features and weekday dummies
-2. _return_prediction_trading_simulation.ipynb_ - Load data, add technical analsis features to the dataset, lag defined features by a certain lag amount, plot some intermediate outputs, perform elimination by variance inflation factor to analyze sentiment feature contribution, fit all cryptocurrency return predictors using Bayesian hyperparameter optimization, perform trading simulation over multiple test periods, create a clearly defined output table of all prediction results
-3. _return_prediction_trading_simulation_(rnn_added_pipeline_implemented).ipynb_ - RNN and LSTM added as financial forecasting models, compared to the previous script
+### **Part 2: Return Prediction and Trading Simulation**
+- **Feature Engineering:** Added price, macroeconomic, blockchain, technical indicators, and lagged variables to prepare data for financial models.  
+- **Prediction Modeling:** Applied Bayesian hyperparameter optimization to train multiple models and analyzed the contribution of sentiment features using variance inflation factor analysis.  
+- **RNN and LSTM Models:** Implemented recurrent neural networks (RNNs) and LSTM models to enhance time-series forecasting.  
+- **Trading Simulation:** Conducted backtesting over multiple periods to evaluate model predictions and simulated trading strategies, generating detailed performance metrics.
+
+---
+
+## Tools & Technologies
+- **Programming & Analysis:** Python, pandas, NumPy, scikit-learn  
+- **Machine Learning & NLP:** BERT, FinBERT, BART, Transformers, Bayesian Optimization  
+- **Deep Learning:** RNN, LSTM  
+- **Financial Modeling:** Trading simulation frameworks, technical indicators  
+
+---
+
+## Key Outcomes
+- Developed a robust pipeline that demonstrates how **investor sentiment can improve cryptocurrency return predictions**.  
+- Generated actionable insights for quantitative trading strategies and risk assessment in crypto markets.  
+- Showcased the integration of **NLP and financial modeling** for research-oriented applications.  
+
+---
+
+## Repository Structure
+
